@@ -1,10 +1,10 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(x, effects.fire, 100)
+    sprites.destroy(x, effects.fire, 1000)
     game.setGameOverMessage(true, "Gottem!")
     game.gameOver(true)
 })
 let x: Sprite = null
-game.splash("Bombmania")
+game.splash("You're about to get chased!", "Get ready!")
 let mySprite = sprites.create(img`
     . . . . . f f f f . . . . . 
     . . . f f 5 5 5 5 f f . . . 
@@ -84,7 +84,7 @@ let x3 = sprites.create(img`
 tiles.placeOnRandomTile(x, sprites.dungeon.floorLight2)
 info.setScore(info.score())
 forever(function () {
-    x.follow(mySprite, 70)
+    x.follow(mySprite, 80)
     info.changeScoreBy(1)
 })
 game.onUpdateInterval(200, function () {

@@ -5,7 +5,7 @@ def on_on_overlap(sprite, otherSprite):
 sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_on_overlap)
 
 x: Sprite = None
-game.splash("Bombmania")
+game.splash("You're about to get chased!" "Get ready!")
 mySprite = sprites.create(img("""
         . . . . . f f f f . . . . . 
             . . . f f 5 5 5 5 f f . . . 

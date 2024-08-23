@@ -11,15 +11,15 @@ let mySprite = sprites.create(img`
     . . f 5 5 5 5 5 5 5 5 f . . 
     . f 5 5 5 5 5 5 5 5 5 5 f . 
     . f 5 5 5 d b b d 5 5 5 f . 
-    f 5 5 5 b 4 4 4 4 b 5 5 5 f 
-    f 5 5 c c 4 4 4 4 c c 5 5 f 
-    f b b f b f 4 4 f b f b b f 
-    f b b 4 1 f d d f 1 4 b b f 
+    f 5 5 5 b d d d d b 5 5 5 f 
+    f 5 5 c c d d d d c c 5 5 f 
+    f b b f b f d d f b f b b f 
+    f b b d 1 6 d d 6 1 d b b f 
     . f b f d d d d d d f b f . 
-    . f e f e 4 4 4 4 e f e f . 
-    . e 4 f 6 9 9 9 9 6 f 4 e . 
-    . 4 d c 9 9 9 9 9 9 c d 4 . 
-    . 4 f b 3 b 3 b 3 b b f 4 . 
+    . f e f e d d d d e f e f . 
+    . e d f 6 9 9 9 9 6 f d e . 
+    . d d c 9 9 9 9 9 9 c d d . 
+    . d f b 3 b 3 b 3 b b f d . 
     . . f f 3 b 3 b 3 3 f f . . 
     . . . . f f b b f f . . . . 
     `, SpriteKind.Player)
@@ -84,10 +84,10 @@ let x3 = sprites.create(img`
 tiles.placeOnRandomTile(x, sprites.dungeon.floorLight2)
 info.setScore(info.score())
 forever(function () {
-    x.follow(mySprite, 80)
+    x.follow(mySprite, 70)
     info.changeScoreBy(1)
 })
-game.onUpdateInterval(200, function () {
+game.onUpdateInterval(500, function () {
     tiles.placeOnRandomTile(x2, sprites.dungeon.floorLight2)
     tiles.placeOnRandomTile(x3, sprites.dungeon.floorDark2)
 })
